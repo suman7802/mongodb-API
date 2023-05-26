@@ -1,8 +1,7 @@
 const {MongoClient} = require("mongodb");
+require('dotenv').config()
 // const uri = "mongodb://0.0.0.0:27017";
-const uri =
-  "mongodb+srv://suman:rgsvsl@csstudents.ebuav9s.mongodb.net/?retryWrites=true&w=majority";
-
+const uri = `mongodb+srv://suman:${process.env.pass}@csstudents.ebuav9s.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 const database = client.db("students");
 const csStudents = database.collection("csStudents");
